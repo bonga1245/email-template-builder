@@ -1,0 +1,8 @@
+@use '../../styles/variables' as *;
+
+.text-content {
+  font-family: $font-family-base;
+  color: $color-secondary;
+  padding: $spacing;
+  line-height: $line-height;
+}

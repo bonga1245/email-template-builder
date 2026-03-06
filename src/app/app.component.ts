@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { HeaderBlockComponent } from './design-system/components/header-block/header-block.component';
+import { TextBlockComponent } from './design-system/components/text-block/text-block.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderBlockComponent],
+  imports: [TextBlockComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
