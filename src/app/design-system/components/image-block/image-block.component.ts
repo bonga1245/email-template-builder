@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-image-block',
+  selector: 'image-block',
   standalone: true,
-  imports: [],
   templateUrl: './image-block.component.html',
-  styleUrl: './image-block.component.scss'
+  styleUrl: './image-block.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageBlockComponent {
-
+  @Input() src!: string;
+  @Input() alt!: string;
+  @Input() width?: string;
 }

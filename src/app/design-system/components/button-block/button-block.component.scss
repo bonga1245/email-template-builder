@@ -1,0 +1,17 @@
+@use '../../styles/variables' as *;
+
+.button-block {
+  padding: $spacing;
+}
+
+.button-block-link {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-header-text;
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  padding: 0 $spacing;
+  height: $height;
+  line-height: $height;
+}

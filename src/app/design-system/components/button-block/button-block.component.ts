@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-button-block',
+  selector: 'button-block',
   standalone: true,
-  imports: [],
   templateUrl: './button-block.component.html',
-  styleUrl: './button-block.component.scss'
+  styleUrl: './button-block.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonBlockComponent {
-
+  @Input() label!: string;
+  @Input() href!: string;
+  @Input() align: 'left' | 'center' | 'right' = 'center';
+  @Input() bgColor?: string;
 }
