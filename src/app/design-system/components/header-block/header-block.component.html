@@ -1,1 +1,6 @@
-<p>header-block works!</p>
+<header class="header-block" [style.background-color]="bgColor">
+  @if (logoUrl) {
+  <img [src]="logoUrl" alt="logo" class="header-logo" />
+  }
+  <span class="header-title">{{ title }}</span>
+</header>

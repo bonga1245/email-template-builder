@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+
+.header-block {
+  display: flex;
+  align-items: center;
+  padding: $spacing;
+  background-color: $color-primary-dark;
+}
+
+.header-logo {
+  height: $height;
+  margin-right: $spacing;
+}
+
+.header-title {
+  color: $color-header-text;
+  font-family: $font-family-base;
+  font-size: $font-size-heading;
+  font-weight: $font-weight-bold;
+}
