@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'header-block',
   standalone: true,
   templateUrl: './header-block.component.html',
-  styleUrl: './header-block.component.scss'
+  styleUrl: './header-block.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderBlockComponent {
-  @Input() title: string = '';
+  @Input() title!: string;
   @Input() logoUrl?: string;
-  @Input() bgColor: any;
+  @Input() bgColor?: string;
 }
