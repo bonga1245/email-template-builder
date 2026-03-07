@@ -1,0 +1,17 @@
+@use '../design-system/styles/variables' as *;
+
+.builder-sidebar {
+  background-color: $color-secondary;
+  color: $color-white;
+}
+
+.builder-preview {
+  background-color: $color-preview-bg;
+}
+
+.builder-canvas {
+  width: 100%;
+  max-width: 600px;
+  background-color: $color-white;
+  min-height: 100%;
+}

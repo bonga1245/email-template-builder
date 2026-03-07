@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { TemplateBuilderComponent } from './template-builder/template-builder.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [TemplateBuilderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
