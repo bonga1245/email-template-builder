@@ -21,7 +21,7 @@ export class TemplateService {
   }
 
   private createDefaultBlock(type: BlockType): TemplateBlock {
-    const id = Math.random().toString(36).substring(2);
+    const id = crypto.randomUUID();
     switch (type) {
       case 'header':
         return { id, type, title: 'New Header' };
