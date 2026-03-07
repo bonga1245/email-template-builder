@@ -15,3 +15,28 @@
   background-color: $color-white;
   min-height: 100%;
 }
+
+.sidebar-title {
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: $spacing;
+}
+
+.block-picker-item {
+  padding: $spacing * 0.5 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.preview-block {
+  margin-bottom: $spacing;
+}
+
+.empty-state {
+  text-align: center;
+  color: #aaa;
+  padding: $spacing * 2;
+  font-family: $font-family-base;
+}

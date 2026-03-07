@@ -1,11 +1,57 @@
 <div class="row g-0 vh-100">
 
-  <div class="col-3 builder-sidebar overflow-auto">
+  <div class="col-3 builder-sidebar overflow-auto p-3">
+
+    <h6 class="sidebar-title">Add Blocks</h6>
+
+    <div class="block-picker">
+      @for (block of blockTypes; track block.type) {
+        <div class="block-picker-item d-flex justify-content-between align-items-center">
+          <span>{{ block.label }}</span>
+          <button class="btn btn-sm btn-primary" (click)="addBlock(block.type)">Add</button>
+        </div>
+      }
+    </div>
 
   </div>
 
   <div class="col builder-preview overflow-auto d-flex justify-content-center p-4">
     <div class="builder-canvas">
+
+      @if (blocks().length === 0) {
+        <p class="empty-state">Add blocks from the sidebar to start building your template</p>
+      }
+
+      @for (block of blocks(); track block.id) {
+        <div class="preview-block">
+          @switch (block.type) {
+            @case ('header') {
+              <header-block
+                [title]="asHeader(block).title"
+                [logoUrl]="asHeader(block).logoUrl"
+                [bgColor]="asHeader(block).bgColor" />
+            }
+            @case ('text') {
+              <text-block
+                [content]="asText(block).content"
+                [alignment]="asText(block).alignment" />
+            }
+            @case ('image') {
+              <image-block
+                [src]="asImage(block).src"
+                [alt]="asImage(block).alt"
+                [width]="asImage(block).width" />
+            }
+            @case ('button') {
+              <button-block
+                [label]="asButton(block).label"
+                [href]="asButton(block).href"
+                [align]="asButton(block).align"
+                [bgColor]="asButton(block).bgColor" />
+            }
+          }
+        </div>
+      }
 
     </div>
   </div>
