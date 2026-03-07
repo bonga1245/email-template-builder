@@ -2,7 +2,7 @@
 
   <div class="col-3 builder-sidebar overflow-auto p-3">
 
-    <h6 class="sidebar-title">Add Blocks</h6>
+    <h6 class="sidebar-title">Build Your Template</h6>
 
     <div class="block-picker">
       @for (block of blockTypes; track block.type) {
@@ -15,7 +15,7 @@
 
     @if (selectedBlock(); as block) {
       <hr class="sidebar-divider" />
-      <h6 class="sidebar-title">Edit Block</h6>
+      <h6 class="sidebar-title">Edit {{ block.type | titlecase }} Block</h6>
 
       @switch (block.type) {
         @case ('header') {

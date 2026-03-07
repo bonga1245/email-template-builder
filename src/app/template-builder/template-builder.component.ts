@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TemplateService } from '../services/template.service';
 import { BlockType, TemplateBlock, HeaderBlockData, TextBlockData, ImageBlockData, ButtonBlockData } from '../models/template-block.model';
@@ -17,7 +18,7 @@ const BLOCK_TYPES: { type: BlockType; label: string }[] = [
 @Component({
   selector: 'template-builder',
   standalone: true,
-  imports: [FormsModule, HeaderBlockComponent, TextBlockComponent, ImageBlockComponent, ButtonBlockComponent],
+  imports: [FormsModule, TitleCasePipe, HeaderBlockComponent, TextBlockComponent, ImageBlockComponent, ButtonBlockComponent],
   templateUrl: './template-builder.component.html',
   styleUrl: './template-builder.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

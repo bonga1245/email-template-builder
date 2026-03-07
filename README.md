@@ -29,6 +29,12 @@ npm run storybook
 ng test
 ```
 
+## How to Use
+
+1. Select a block type from the **Build Your Template** sidebar and click **Add**.
+2. Click on any block in the preview to select it and edit its properties in the sidebar.
+3. To delete a block, hover over it in the preview — a **Remove** button will appear in the top-right corner of the block.
+
 ## Approach
 The app is split into two layers:
 
@@ -50,3 +56,6 @@ The app is split into two layers:
 - **Improve look and feel of UI** — enhance the overall visual design with better typography, spacing, color palette, and responsive layout to create a more polished and intuitive user experience.
 - **Centralise constants** — introduce a dedicated constants file (e.g. `constants.ts`) to store hardcoded values such as default block labels, size limits, and placeholder text, rather than scattering magic values across HTML templates and components.
 - **Save & load templates** — persist the current template via an API or `localStorage` so it survives a page refresh, and allow users to save and restore named templates.
+- **UX Enhancements**:
+  - Add form validation feedback in the sidebar (e.g. min/max character warnings).
+  - Add a confirmation dialog before deleting a block to prevent accidental removal.

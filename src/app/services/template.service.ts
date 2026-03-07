@@ -26,11 +26,11 @@ export class TemplateService {
     const id = crypto.randomUUID();
     switch (type) {
       case 'header':
-        return { id, type, title: 'New Header' };
+        return { id, type, title: 'Header Title', logoUrl: 'https://placehold.co/120x40/EEF2FF/6366F1?text=Logo' };
       case 'text':
-        return { id, type, content: 'New text block', alignment: 'left' };
+        return { id, type, content: 'Text Block', alignment: 'left' };
       case 'image':
-        return { id, type, src: 'https://placehold.co/600x200', alt: 'Placeholder image', width: '100%' };
+        return { id, type, src: 'https://placehold.co/600x200/EEF2FF/6366F1?text=Your+Image+Here', alt: 'Placeholder image', width: '100%' };
       case 'button':
         return { id, type, label: 'Click Here', url: '#', align: 'center' };
     }
