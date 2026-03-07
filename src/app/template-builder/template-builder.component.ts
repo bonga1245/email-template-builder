@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TemplateService } from '../services/template.service';
 import { BlockType, TemplateBlock, HeaderBlockData, TextBlockData, ImageBlockData, ButtonBlockData } from '../models/template-block.model';
 import { HeaderBlockComponent } from '../design-system/components/header-block/header-block.component';
@@ -16,7 +17,7 @@ const BLOCK_TYPES: { type: BlockType; label: string }[] = [
 @Component({
   selector: 'template-builder',
   standalone: true,
-  imports: [HeaderBlockComponent, TextBlockComponent, ImageBlockComponent, ButtonBlockComponent],
+  imports: [FormsModule, HeaderBlockComponent, TextBlockComponent, ImageBlockComponent, ButtonBlockComponent],
   templateUrl: './template-builder.component.html',
   styleUrl: './template-builder.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -37,12 +38,26 @@ export class TemplateBuilderComponent {
   }
 
   removeBlock(id: string): void {
+    if (this.selectedBlockId() === id) {
+      this.selectedBlockId.set(null);
+    }
     this.templateService.removeBlock(id);
   }
 
   selectBlock(id: string): void {
     this.selectedBlockId.set(id);
-    console.log('selectedBlockId ', id);
+  }
+
+  update(id: string, changes: Partial<TemplateBlock>): void {
+    this.templateService.updateBlock(id, changes);
+  }
+
+  setTextAlignment(id: string, value: string): void {
+    this.templateService.updateBlock(id, { alignment: value as 'left' | 'center' | 'right' });
+  }
+
+  setButtonAlign(id: string, value: string): void {
+    this.templateService.updateBlock(id, { align: value as 'left' | 'center' | 'right' });
   }
 
   asHeader(block: TemplateBlock): HeaderBlockData   { return block as HeaderBlockData; }

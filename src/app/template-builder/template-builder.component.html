@@ -13,25 +13,101 @@
       }
     </div>
 
-    <hr class="sidebar-divider" />
-    <h6 class="sidebar-title">Edit Block</h6>
+    @if (selectedBlock(); as block) {
+      <hr class="sidebar-divider" />
+      <h6 class="sidebar-title">Edit Block</h6>
 
-    <div class="mb-2">
-      <label class="form-label">Title</label>
-      <input class="form-control form-control-sm" placeholder="Block title" />
-    </div>
-    <div class="mb-2">
-      <label class="form-label">Content</label>
-      <textarea class="form-control form-control-sm" rows="3" placeholder="Block content"></textarea>
-    </div>
-    <div class="mb-2">
-      <label class="form-label">Alignment</label>
-      <select class="form-select form-select-sm">
-        <option value="left">Left</option>
-        <option value="center">Center</option>
-        <option value="right">Right</option>
-      </select>
-    </div>
+      @switch (block.type) {
+        @case ('header') {
+          <div class="mb-2">
+            <label class="form-label">Title</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asHeader(block).title"
+                   (ngModelChange)="update(block.id, { title: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Logo URL</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asHeader(block).logoUrl ?? ''"
+                   (ngModelChange)="update(block.id, { logoUrl: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Background colour</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asHeader(block).bgColor ?? ''"
+                   (ngModelChange)="update(block.id, { bgColor: $event })" />
+          </div>
+        }
+        @case ('text') {
+          <div class="mb-2">
+            <label class="form-label">Content</label>
+            <textarea class="form-control form-control-sm" rows="4"
+                      [ngModel]="asText(block).content"
+                      (ngModelChange)="update(block.id, { content: $event })"></textarea>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Alignment</label>
+            <select class="form-select form-select-sm"
+                    [ngModel]="asText(block).alignment"
+                    (ngModelChange)="setTextAlignment(block.id, $event)">
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
+          </div>
+        }
+        @case ('image') {
+          <div class="mb-2">
+            <label class="form-label">Image URL</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asImage(block).src"
+                   (ngModelChange)="update(block.id, { src: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Alt text</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asImage(block).alt"
+                   (ngModelChange)="update(block.id, { alt: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Width</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asImage(block).width ?? '100%'"
+                   (ngModelChange)="update(block.id, { width: $event })" />
+          </div>
+        }
+        @case ('button') {
+          <div class="mb-2">
+            <label class="form-label">Label</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asButton(block).label"
+                   (ngModelChange)="update(block.id, { label: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">URL</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asButton(block).href"
+                   (ngModelChange)="update(block.id, { href: $event })" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Alignment</label>
+            <select class="form-select form-select-sm"
+                    [ngModel]="asButton(block).align"
+                    (ngModelChange)="setButtonAlign(block.id, $event)">
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Background colour</label>
+            <input class="form-control form-control-sm"
+                   [ngModel]="asButton(block).bgColor ?? ''"
+                   (ngModelChange)="update(block.id, { bgColor: $event })" />
+          </div>
+        }
+      }
+    }
 
   </div>
 
