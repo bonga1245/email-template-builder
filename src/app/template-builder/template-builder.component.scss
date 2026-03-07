@@ -53,3 +53,15 @@
   padding: $spacing * 2;
   font-family: $font-family-base;
 }
+
+.sidebar-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+  margin: $spacing 0;
+}
+
+.form-label {
+  color: $color-white;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
