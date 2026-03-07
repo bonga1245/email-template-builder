@@ -12,9 +12,14 @@ An Angular application for building simple email templates from reusable content
 - Jasmine/Karma for tests
 
 ## Setup
+
+> **Prerequisites:** Install [Node.js LTS](https://nodejs.org) (v18 or v20 recommended) and [Git](https://git-scm.com)
+
 ```bash
+git clone https://github.com/bonga1245/your-repo.git
+cd email-template-builder
 npm install
-ng serve
+npm start
 ```
 
 Open `http://localhost:4200`.
