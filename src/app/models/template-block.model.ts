@@ -27,7 +27,8 @@ export interface ButtonBlockData {
   type: 'button';
   id: string;
   label: string;
-  href: string;
+  url: string;
+  variant?: 'primary' | 'secondary';
   align: 'left' | 'center' | 'right';
   bgColor?: string;
 }

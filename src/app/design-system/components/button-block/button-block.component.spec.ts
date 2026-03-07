@@ -13,7 +13,7 @@ describe('ButtonBlockComponent', () => {
     fixture = TestBed.createComponent(ButtonBlockComponent);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('label', 'Click Here');
-    fixture.componentRef.setInput('href', 'https://example.com');
+    fixture.componentRef.setInput('url', 'https://example.com');
     fixture.detectChanges();
   });
 

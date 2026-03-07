@@ -9,7 +9,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ButtonBlockComponent {
   @Input() label!: string;
-  @Input() href!: string;
+  @Input() url!: string;
+  @Input() variant?: 'primary' | 'secondary';
   @Input() align: 'left' | 'center' | 'right' = 'center';
   @Input() bgColor?: string;
 }

@@ -86,8 +86,8 @@
           <div class="mb-2">
             <label class="form-label">URL</label>
             <input class="form-control form-control-sm"
-                   [ngModel]="asButton(block).href"
-                   (ngModelChange)="update(block.id, { href: $event })" />
+                   [ngModel]="asButton(block).url"
+                   (ngModelChange)="update(block.id, { url: $event })" />
           </div>
           <div class="mb-2">
             <label class="form-label">Alignment</label>
@@ -144,7 +144,7 @@
             @case ('button') {
               <button-block
                 [label]="asButton(block).label"
-                [href]="asButton(block).href"
+                [url]="asButton(block).url"
                 [align]="asButton(block).align"
                 [bgColor]="asButton(block).bgColor" />
             }

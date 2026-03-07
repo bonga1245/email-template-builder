@@ -32,7 +32,7 @@ export class TemplateService {
       case 'image':
         return { id, type, src: 'https://placehold.co/600x200', alt: 'Placeholder image', width: '100%' };
       case 'button':
-        return { id, type, label: 'Click Here', href: '#', align: 'center' };
+        return { id, type, label: 'Click Here', url: '#', align: 'center' };
     }
   }
 }
