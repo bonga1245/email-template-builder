@@ -6,8 +6,10 @@ export class TemplateService {
   private _blocks = signal<TemplateBlock[]>([]);
   readonly blocks = this._blocks.asReadonly();
 
-  addBlock(type: BlockType): void {
-    this._blocks.update(blocks => [...blocks, this.createDefaultBlock(type)]);
+  addBlock(type: BlockType): string {
+    const block = this.createDefaultBlock(type);
+    this._blocks.update(blocks => [...blocks, block]);
+    return block.id;
   }
 
   updateBlock(id: string, changes: Partial<TemplateBlock>): void {

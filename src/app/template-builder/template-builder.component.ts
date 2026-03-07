@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
 import { TemplateService } from '../services/template.service';
 import { BlockType, TemplateBlock, HeaderBlockData, TextBlockData, ImageBlockData, ButtonBlockData } from '../models/template-block.model';
 import { HeaderBlockComponent } from '../design-system/components/header-block/header-block.component';
@@ -26,13 +26,23 @@ export class TemplateBuilderComponent {
 
   readonly blockTypes = BLOCK_TYPES;
   readonly blocks = this.templateService.blocks;
+  readonly selectedBlockId = signal<string | null>(null);
+  readonly selectedBlock = computed(() =>
+    this.blocks().find(b => b.id === this.selectedBlockId()) ?? null
+  );
 
   addBlock(type: BlockType): void {
-    this.templateService.addBlock(type);
+    const id = this.templateService.addBlock(type);
+    this.selectedBlockId.set(id);
   }
 
   removeBlock(id: string): void {
     this.templateService.removeBlock(id);
+  }
+
+  selectBlock(id: string): void {
+    this.selectedBlockId.set(id);
+    console.log('selectedBlockId ', id);
   }
 
   asHeader(block: TemplateBlock): HeaderBlockData   { return block as HeaderBlockData; }

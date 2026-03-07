@@ -43,8 +43,10 @@
       }
 
       @for (block of blocks(); track block.id) {
-        <div class="preview-block">
-          <button class="remove-btn btn btn-sm btn-danger" (click)="removeBlock(block.id)">Remove</button>
+        <div class="preview-block"
+             [class.selected]="selectedBlockId() === block.id"
+             (click)="selectBlock(block.id)">
+          <button class="remove-btn btn btn-sm btn-danger" (click)="removeBlock(block.id); $event.stopPropagation()">Remove</button>
           @switch (block.type) {
             @case ('header') {
               <header-block
