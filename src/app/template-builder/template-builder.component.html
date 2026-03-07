@@ -24,6 +24,7 @@
 
       @for (block of blocks(); track block.id) {
         <div class="preview-block">
+          <button class="remove-btn btn btn-sm btn-danger" (click)="removeBlock(block.id)">Remove</button>
           @switch (block.type) {
             @case ('header') {
               <header-block

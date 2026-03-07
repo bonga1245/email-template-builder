@@ -31,6 +31,10 @@ export class TemplateBuilderComponent {
     this.templateService.addBlock(type);
   }
 
+  removeBlock(id: string): void {
+    this.templateService.removeBlock(id);
+  }
+
   asHeader(block: TemplateBlock): HeaderBlockData   { return block as HeaderBlockData; }
   asText(block: TemplateBlock): TextBlockData       { return block as TextBlockData; }
   asImage(block: TemplateBlock): ImageBlockData     { return block as ImageBlockData; }
