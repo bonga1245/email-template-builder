@@ -44,3 +44,9 @@ The app is split into two layers:
 - No routing or backend integration.
 - Storybook config is included
 - Bootstrap is used for layout/utilities only; component styling relies on SCSS tokens.
+
+## What I Would Improve Given More Time
+- **Drag-and-drop reordering** — allow users to reorder blocks via drag-and-drop using the Angular CDK `DragDropModule`.
+- **Improve look and feel of UI** — enhance the overall visual design with better typography, spacing, color palette, and responsive layout to create a more polished and intuitive user experience.
+- **Centralise constants** — introduce a dedicated constants file (e.g. `constants.ts`) to store hardcoded values such as default block labels, size limits, and placeholder text, rather than scattering magic values across HTML templates and components.
+- **Save & load templates** — persist the current template via an API or `localStorage` so it survives a page refresh, and allow users to save and restore named templates.
