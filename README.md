@@ -16,7 +16,7 @@ An Angular application for building simple email templates from reusable content
 > **Prerequisites:** Install [Node.js LTS](https://nodejs.org) (v18 or v20 recommended) and [Git](https://git-scm.com)
 
 ```bash
-git clone https://github.com/bonga1245/your-repo.git
+git clone https://github.com/bonga1245/email-template-builder.git
 cd email-template-builder
 npm install
 npm start
@@ -31,7 +31,7 @@ npm run storybook
 
 ## Tests
 ```bash
-ng test
+npm test
 ```
 
 ## How to Use
