@@ -26,13 +26,14 @@
 }
 
 .block-picker-item {
-  padding: $spacing * 0.5 0;
+  padding: $spacing-base 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .preview-block {
   position: relative;
   margin-bottom: $spacing;
+  border-radius: $border-radius;
 
   &:hover .remove-btn {
     display: block;
@@ -42,8 +43,8 @@
 .remove-btn {
   display: none;
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: $spacing-base * 0.5;
+  right: $spacing-base * 0.5;
   z-index: 1;
 }
 
@@ -68,5 +69,5 @@
   color: $color-white;
   font-size: 0.75rem;
   opacity: 0.8;
-  margin-bottom: 2px;
+  margin-bottom: $spacing-base * 0.25;
 }
