@@ -22,12 +22,14 @@
           <div class="mb-2">
             <label class="form-label">Title</label>
             <input class="form-control form-control-sm"
+                   placeholder="e.g. Monthly Newsletter"
                    [ngModel]="asHeader(block).title"
                    (ngModelChange)="update(block.id, { title: $event })" />
           </div>
           <div class="mb-2">
             <label class="form-label">Logo URL</label>
             <input class="form-control form-control-sm"
+                   placeholder="https://example.com/logo.png"
                    [ngModel]="asHeader(block).logoUrl ?? ''"
                    (ngModelChange)="update(block.id, { logoUrl: $event })" />
           </div>
@@ -42,6 +44,7 @@
           <div class="mb-2">
             <label class="form-label">Content</label>
             <textarea class="form-control form-control-sm" rows="4"
+                      placeholder="Enter your message text here..."
                       [ngModel]="asText(block).content"
                       (ngModelChange)="update(block.id, { content: $event })"></textarea>
           </div>
@@ -60,18 +63,21 @@
           <div class="mb-2">
             <label class="form-label">Image URL</label>
             <input class="form-control form-control-sm"
+                   placeholder="https://example.com/image.jpg"
                    [ngModel]="asImage(block).src"
                    (ngModelChange)="update(block.id, { src: $event })" />
           </div>
           <div class="mb-2">
             <label class="form-label">Alt text</label>
             <input class="form-control form-control-sm"
+                   placeholder="Describe the image for  reader(s)"
                    [ngModel]="asImage(block).alt"
                    (ngModelChange)="update(block.id, { alt: $event })" />
           </div>
           <div class="mb-2">
             <label class="form-label">Width</label>
             <input class="form-control form-control-sm"
+                   placeholder="e.g. 100% or 600px"
                    [ngModel]="asImage(block).width ?? '100%'"
                    (ngModelChange)="update(block.id, { width: $event })" />
           </div>
@@ -80,12 +86,14 @@
           <div class="mb-2">
             <label class="form-label">Label</label>
             <input class="form-control form-control-sm"
+                   placeholder="e.g. Click Here"
                    [ngModel]="asButton(block).label"
                    (ngModelChange)="update(block.id, { label: $event })" />
           </div>
           <div class="mb-2">
             <label class="form-label">URL</label>
             <input class="form-control form-control-sm"
+                   placeholder="https://example.com"
                    [ngModel]="asButton(block).url"
                    (ngModelChange)="update(block.id, { url: $event })" />
           </div>
