@@ -33,8 +33,8 @@
           </div>
           <div class="mb-2">
             <label class="form-label">Background colour</label>
-            <input class="form-control form-control-sm"
-                   [ngModel]="asHeader(block).bgColor ?? ''"
+            <input type="color" class="form-control form-control-sm form-control-color"
+                   [ngModel]="asHeader(block).bgColor ?? '#1a1a2e'"
                    (ngModelChange)="update(block.id, { bgColor: $event })" />
           </div>
         }
@@ -101,8 +101,8 @@
           </div>
           <div class="mb-2">
             <label class="form-label">Background colour</label>
-            <input class="form-control form-control-sm"
-                   [ngModel]="asButton(block).bgColor ?? ''"
+            <input type="color" class="form-control form-control-sm form-control-color"
+                   [ngModel]="asButton(block).bgColor ?? '#0d6efd'"
                    (ngModelChange)="update(block.id, { bgColor: $event })" />
           </div>
         }
