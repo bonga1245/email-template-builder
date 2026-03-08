@@ -9,19 +9,21 @@ const meta: Meta<ButtonBlockComponent> = {
 export default meta;
 type Story = StoryObj<ButtonBlockComponent>;
 
-export const Basic: Story = {
+export const Primary: Story = {
   args: {
     label: 'Click Here',
     url: 'https://example.com',
+    variant: 'primary',
     align: 'center'
   }
 };
 
-export const LeftAligned: Story = {
+export const Secondary: Story = {
   args: {
     label: 'Learn More',
     url: 'https://example.com',
-    align: 'left'
+    variant: 'secondary',
+    align: 'center'
   }
 };
 

@@ -37,4 +37,11 @@ describe('ButtonBlockComponent', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('.button-block-link');
     expect(el.style.backgroundColor).toBe('rgb(230, 57, 70)');
   });
+
+  it('should apply secondary class when variant is secondary', () => {
+    fixture.componentRef.setInput('variant', 'secondary');
+    fixture.detectChanges();
+    const el: HTMLElement = fixture.nativeElement.querySelector('.button-block-link');
+    expect(el.classList).toContain('button-block-link--secondary');
+  });
 });

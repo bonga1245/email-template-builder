@@ -108,10 +108,13 @@
             </select>
           </div>
           <div class="mb-2">
-            <label class="form-label">Background colour</label>
-            <input type="color" class="form-control form-control-sm form-control-color"
-                   [ngModel]="asButton(block).bgColor ?? '#0d6efd'"
-                   (ngModelChange)="update(block.id, { bgColor: $event })" />
+            <label class="form-label">Variant</label>
+            <select class="form-select form-select-sm"
+                    [ngModel]="asButton(block).variant ?? 'primary'"
+                    (ngModelChange)="update(block.id, { variant: $event })">
+              <option value="primary">Primary</option>
+              <option value="secondary">Secondary</option>
+            </select>
           </div>
         }
       }
@@ -154,7 +157,7 @@
                 [label]="asButton(block).label"
                 [url]="asButton(block).url"
                 [align]="asButton(block).align"
-                [bgColor]="asButton(block).bgColor" />
+                [variant]="asButton(block).variant" />
             }
           }
         </div>
