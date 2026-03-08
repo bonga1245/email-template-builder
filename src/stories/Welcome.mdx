@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Welcome" />
+
+# Email Template Builder — Design System
+
+Welcome to the component library for the **Email Template Builder**.
+
+This Storybook documents the reusable email content block components that make up the design system.
+
+## Components
+
+- **Header Block** — A header bar with a title, optional logo, and configurable background colour
+- **Text Block** — A text paragraph with configurable alignment (left, center, right)
+- **Image Block** — An image with alt text and configurable width
+- **Button Block** — A styled CTA button with primary and secondary variants
+
+## Usage
+
+Each component is a standalone Angular component with `@Input()` properties and `ChangeDetectionStrategy.OnPush`.
+They are presentational only — no service dependencies or side effects.
+
+## Design Tokens
+
+All colours, spacing, and typography are driven by SCSS variables defined in `src/app/design-system/styles/_variables.scss`.
